@@ -23,5 +23,5 @@ db.on('error', (error) => {
     console.log(`Database error\n ${error}`);
 });
 
-// const User = require('./User');
-// module.exports = User;
+const User = require('./User');
+module.exports = User;
