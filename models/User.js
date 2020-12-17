@@ -11,7 +11,7 @@ const userSchema = new Schema ({
         type: String,
         require: true
     },
-    passowrd: {
+    password: {
         type: String,
         required: true,
         minlength: 8,
@@ -22,6 +22,6 @@ const userSchema = new Schema ({
     }
 });
 
-const User = mongoose.model('User', userSchema)
 
-module.exports = User;
+
+module.exports = User = mongoose.model('User', userSchema)
