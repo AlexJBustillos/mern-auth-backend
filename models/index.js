@@ -1,4 +1,6 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
+
 
 // Mongo connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -9,6 +11,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Mongoose connection object
 const db = mongoose.connection;
+console.log(db);
 
 // Set up event listener that will fire once connection opens for database
 // log to the terminal what host and port we are on 
@@ -20,5 +23,5 @@ db.on('error', (error) => {
     console.log(`Database error\n ${error}`);
 });
 
-const User = require('./User');
-module.exports = User;
+// const User = require('./User');
+// module.exports = User;
