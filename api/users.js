@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Models
 const db = require('../models');
@@ -47,7 +48,7 @@ router.post('/register', (req, res) => {
 //POST api/users/login (Public)
 router.post('/login', (req, res) => {
     const email = req.body.email;
-    const password = req.body.passwords;
+    const password = req.body.password;
 
     // Find a user via email
     db.User.findOne({ email })
